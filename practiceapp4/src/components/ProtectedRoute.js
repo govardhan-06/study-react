@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Login from './Login';
 
 const ProtectedRoute = ({children})=>{
     const [isAuthenticated,setAuthenticated]=useState(false);
@@ -14,7 +15,7 @@ const ProtectedRoute = ({children})=>{
         console.log(isAuthenticated);
     });
     return(
-        isAuthenticated?children:navigate("/login")
+        isAuthenticated?children:<Login/>
     )
 }
 
